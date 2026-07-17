@@ -33,41 +33,54 @@
 
 \hrule
 
-\subheader{Exercise: Defend your Model}
+\subheader{Exercise: Developing Objective Functions}
 
-As we proceed through the exercise, record observations and tools that are relevant to each phase of the modeling process. Consider how the ideas of \textit{selecting}, \textit{using}, and \textit{assessing} a model fit into the modeling framework we use in this class.
-\begin{itemize}
-\item FORMULATE
+\noindent Maximization
 
-\vfill
+I am the team lead for a National Mission Team and want to maximize the number of hours my team spends on operations. 
+Formulate my objective function function and matrix vector notation. 
 
-\item SOLVE
+Now I want to maximize the rate at which I gain newly qualified Senior Cyberspace Operators for my team. 
+This will allow me to increase my operational capacity in the long term. 
+Qualifying as a Senior Cyberspace Operator requires both training sessions and operational experience. 
+I have examined the rate at which my team members progress towards qualification, and found that I gain .04 new operators for each hour of operations I schedule, and .015 new operators for each hour of training I schedule. 
+Formulate an objective function maximizing the qualification rate for my team.
 
-\vfill
+\noindent Minimization
 
-\item INTERPRET
+There has been a lot of complaining in my office about our new busy schedule. 
+For every hour of operations I schedule, I hear 32 minutes of complaining. 
+For every hour of training I schedule, I hear 14 minutes of complaining. 
+Formulate an objective function minimizing the amount of complaining on my team.
 
-\vfill
+Some of the complaining that I hear comes from fellow team leads (I have been hogging all of the workstation in the Joint Operations Center). 
+Eager to rebuild my relationships with my peers, I want to minimize my use of the shared workstations. 
+For every hour of operations that I schedule, I use 3 hours of workstation time, since my operator, analyst, and mission commander each need a workstation. 
+For every hour of training that I schedule, I reduce the amount of workstation time used by 45 minutes, since my team members' friends are too busy come by and hang out. 
+Formulate an objective function minimizing the amount of workstation time used by my team.
 
-\item TEST
+\noindent $>$2 Independent Variables
 
-\vfill
+I realize that I have forgotten to account for time dedicated to unit PT. We must conduct a minimum of 5 hours of PT each week per Soldier. Therefore, my new constraints are: 
+[constraints here]
+Morning PT is bad for my complaining index, with an unprecedented 87 minutes of complaining for every hour of PT I schedule. 
+Formulate an objective function minimizing the amount of complaining on my team, now including PT hours as a third independent variable.
 
-\end{itemize}
+Does this affect my ability to graphically depict the objective function?
+Does it affect my ability to find an optimal solution to the linear programming model?
+
+\noindent Abstract Goals
+
+All of my analysts have been offered jobs at Microsoft. 
+I am concerned about retention rates, and I want to come up with an index that reflects how weekly schedules affect my team's job satisfaction. 
+Develop an objective function that maximizes job satisfaction, using operations, training sessions, and morning PT as independent variables.
+
+Do operations, training sessions, and morning PT contribute positively or negatively to job satisfaction in your objective function? Is the relationship linear? In real life, might these variables have a non-linear relationship with job satisfaction?
 
 \hrule
 
-
 \subheader{Wrap-Up: Food for Thought}
 
-\noindent Which model is the best? Does the answer depend on the situation the decision-maker is in?
-
-\vfill
-
-\noindent Is modeling a linear process, or is it circular/iterative? Is this true for both linear and non-linear modeling?
-
-\vfill
-
-\noindent Are there models (or tools for assessing models) that we did not cover in class, but that might have helped our decision maker? For two bonus points, bring in a short (3-5 handwritten sentences) discussion of one model or tool not covered in class that we could have applied to today's exercise. Due Monday, prior to the Predictive Modeling Gate.
+\noindent In the objective functions that we used today, the parameter ($c_i$) values were given to you. In the real world, will that always be true? How might you use predictive modeling to calculate parameters for your objective function?
 
 \end{document}
