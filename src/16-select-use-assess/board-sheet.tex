@@ -1,40 +1,18 @@
 \documentclass[11pt]{article}
-\usepackage{graphicx}
-\usepackage{amsmath,amssymb}
-\usepackage{tikz}
-\usepackage{fullpage}
-\usepackage[english]{babel}
-\usepackage[margin=1.0in]{geometry}
-\usepackage{enumitem}
-\newcommand{\ds}{\displaystyle}
-
-\newcommand{\sep}{\vskip .4in}
-\newcommand{\ansbox}[1]{%
-\hbox to 1.5 truein{\hfil \framebox{\parbox[b]{#1in}{\quad \\ \quad}}}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\baselineskip =20pt
-\parskip =10pt
+\input{include/whisnant_board_sheet}
 
 \begin{document}
-\begin{center} \Large {MA103: Data-Driven Modeling\\Lesson 16: Select, Use, Assess}  \end{center}
-\hrule
+\lessonheader{16}{Select, Use, Assess}
 
-\vspace{-0.25in}
-\section*{Lesson Objectives}
-\vspace{-0.2in}
-\begin{enumerate}
-\item Select an appropriate predictive model based on data, context, and purpose.
-\item Assess predictive models using training and test data.
-\item Interpret model outputs and limitations in context.
-\item Justify model selection and use for a given predictive modeling question.
-\end{enumerate}
+\lessonobjectives{%
+  {Select an appropriate predictive model based on data, context, and purpose.},
+  {Assess predictive models using training and test data.},
+  {Interpret model outputs and limitations in context.},
+  {Justify model selection and use for a given predictive modeling question.}%
+}
 
-\hrule
+\subheader{Warm-Up: Review of Non-Linear Functions}
 
-\vspace{-0.3in}
-\noindent
-\section*{Warm-Up: Review of Non-Linear Functions}
-\vspace{-0.2in}
 What are the three types of non-linear functions we discussed during the previous class? What are their general forms?
 
 \begin{table}[h]
@@ -64,7 +42,7 @@ What are the three types of non-linear functions we discussed during the previou
 
 \begin{figure}[htbp] % [htbp] specifies placement preference (here, top, bottom, page)
     \centering % Centers the image horizontally
-    \includegraphics[width=0.6\textwidth]{Figures/1.png} 
+    \includegraphics[width=0.6\textwidth]{\includegraphics[width=0.6\textwidth]{Figures/1.png}} 
 \end{figure}
 
 \noindent How does the data shown in the image violate the assumptions of a linear model?
@@ -74,10 +52,8 @@ What are the three types of non-linear functions we discussed during the previou
 
 \hrule
 
-\vspace{-0.3in}
-\noindent
-\section*{Exercise: Defend your Model}
-\vspace{-0.2in}
+\subheader{Exercise: Defend your Model}
+
 As we proceed through the exercise, record observations and tools that are relevant to each phase of the modeling process. Consider how the ideas of \textit{selecting}, \textit{using}, and \textit{assessing} a model fit into the modeling framework we use in this class.
 \begin{itemize}
 \item FORMULATE
@@ -100,10 +76,8 @@ As we proceed through the exercise, record observations and tools that are relev
 
 \hrule
 
-\vspace{-0.3in}
-\noindent
-\section*{Wrap-Up: Food for Thought}
-\vspace{-0.2in}
+
+\subheader{Wrap-Up: Food for Thought}
 
 \noindent Which model is the best? Does the answer depend on the situation the decision-maker is in?
 

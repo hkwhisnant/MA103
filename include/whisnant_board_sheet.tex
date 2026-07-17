@@ -1,0 +1,26 @@
+\usepackage{tikz}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{etoolbox}
+
+\newcommand{\lessonheader}[2]{%
+\begin{center} \Large {MA103: Data-Driven Modeling\\Lesson #1: #2}  \end{center}
+\hrule
+}
+
+\newcommand{\objectiveitem}[1]{\item #1}
+\newcommand{\lessonobjectives}[1]{%
+\vspace{-0.1in}
+\section*{Lesson Objectives}
+\vspace{-0.1in}
+\begin{enumerate}
+\forcsvlist{\objectiveitem}{#1}
+\end{enumerate}
+\hrule
+}
+
+\newcommand{\subheader}[1]{%
+\vspace{-0.1in}
+\noindent
+\section*{#1}
+\vspace{-0.1in}
+}
