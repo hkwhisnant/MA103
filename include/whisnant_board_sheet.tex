@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage[margin=1.0in]{geometry}
 \usepackage{etoolbox}
+\usepackage{amsmath}
 
 \newcommand{\lessonheader}[2]{%
 \begin{center} \Large {MA103: Data-Driven Modeling\\Lesson #1: #2}  \end{center}
@@ -23,5 +24,12 @@
 \vspace{-0.1in}
 \noindent
 \section*{#1}
+\vspace{-0.1in}
+}
+
+\newcommand{\subsubheader}[1]{%
+\vspace{-0.1in}
+\noindent
+\subsubsection*{#1}
 \vspace{-0.1in}
 }
