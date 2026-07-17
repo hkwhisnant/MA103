@@ -1,0 +1,17 @@
+# Makefile output
+/build/
+
+# LaTeX intermediates (in case a tool compiles in place)
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+*.pdf
