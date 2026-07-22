@@ -21,14 +21,14 @@
 
 \noindent You branched Cyber. Congratulations! 
 
-Eight years later, you are the team lead for a National Mission Team. 
-Your team of operators and analysts must both train to conduct Offensive Cyberspace Operations and execute those operations as a part of the Cyber Mission Force.
+Three years later, you are the mission element lead for a National Mission Team. 
+Your team of operators and analysts must both 1) train to conduct Offensive Cyberspace Operations and 2) execute those operations as a part of the Cyber Mission Force.
 
 You have 2 fully qualified operators, each of whom is restricted by policy to a maximum of 50 work hours per week. 
-You also have 3 qualified analysts, each of whom can work a maximum of 60 hours per week before burning out and quitting their jobs.
+You also have 3 qualified analysts, each of whom can work a maximum of 60 hours per week.
 
-Each hour of operations you schedule requires 2 operator-hours and 3 analyst-hours. 
-Each hour of training you schedule requires 2 operator-hours and 1 analyst-hour. 
+Each hour of operations you schedule requires 2 operator-hours and 3 analyst-hours to complete. 
+Each hour of training you schedule requires 2 operator-hours and 1 analyst-hour to complete. 
 Your higher headquarters requires you to conduct at least 20 hours of operations each week.
 
 Let $x$ be the number of hours of operations you schedule each week and $y$ be the number of hours of training you schedule each week.
@@ -54,18 +54,18 @@ Formulate your objective function in function notation and matrix vector notatio
 
 \vfill
 
-Now you want to prioritize increasing your operational capacity in the long term by increasing your number of Senior operators. 
+Now you want to prioritize increasing your operational capacity in the long term by increasing your number of qualified operators. 
 
-Qualifying as a Senior Cyberspace Operator requires both training sessions and operational experience. 
+Qualifying as a Cyberspace Operator requires both training sessions and operational experience. 
 You have examined the rate at which your team members progress towards qualification and found that you gain .04 new operators for each hour of operations you schedule and .015 new operators for each hour of training you schedule. 
 
-Formulate an objective function maximizing the qualification rate for your team.
+Formulate an objective function maximizing your team's progress towards qualification.
 
 \vfill
 
 \subsubheader{Minimization}
 
-\leavevmode\hspace*{\parindent}There has been a lot of complaining in your office about the new schedule. 
+\leavevmode\hspace*{\parindent}There has been a lot of complaining in your office about the busy new schedule. 
 
 For every hour of operations you schedule, you hear 32 minutes of complaining. 
 For every hour of training you schedule, you hear 14 minutes of complaining. 
@@ -74,8 +74,7 @@ Formulate an objective function minimizing the amount of complaining on your tea
 
 \vfill
 
-The Joint Operations Center has a number of workstations for teams to use. 
-Some of the complaining that you hear comes from fellow team leads, since you have been hogging all of the workstations. 
+Some of the complaining that you hear comes from fellow team leads, since your operations have been hogging all of the workstations in the Joint Operations Center. 
 Eager to rebuild your relationships with your peers, you want to minimize your use of the shared workstations. 
 
 For every hour of operations that you schedule, you use 3 hours of workstation time, since your operator, analyst, and mission commander each need a workstation. 
@@ -89,7 +88,7 @@ Formulate an objective function minimizing the amount of workstation time used b
 
 \subsubheader{$>$2 Independent Variables}
 
-\leavevmode\hspace*{\parindent}You realize that you have forgotten to account for time dedicated to unit PT. You must conduct a minimum of 5 hours of PT each week per Soldier. Therefore, your new constraints are: 
+\leavevmode\hspace*{\parindent}You realize that you have forgotten to account for time dedicated to unit PT. You must conduct a minimum of 5 hours of unit PT each week. PT hours do not count towards the maximum number of hours an individual Soldier can work. Therefore, your new constraints are: 
 \begin{align*}
 3x + 2y &\le 180 \\
 2x + y &\le 100 \\
@@ -98,7 +97,7 @@ z &\ge 5 \\
 x, y, z &\ge 0
 \end{align*}
 
-Morning PT is bad for your complaining index, with an unprecedented 87 minutes of complaining for every Soldier-hour of PT you schedule. 
+Morning PT is bad for your complaining index, with an unprecedented 87 minutes of complaining for every hour of PT you schedule. 
 
 Formulate an objective function minimizing the amount of complaining on your team, now including PT hours as a third independent variable.
 
@@ -112,7 +111,7 @@ Does it affect your ability to find an optimal solution to the linear programmin
 \subsubheader{Abstract Goals}
 
 \leavevmode\hspace*{\parindent}All of your analysts have been offered jobs at Microsoft. 
-You are concerned about retention rates, and want to come up with an index that reflects how weekly schedules impact job satisfaction. 
+You are concerned about retention rates and want to come up with an index that reflects how weekly schedules impact job satisfaction. 
 
 Use your best judgment to develop an objective function that maximizes job satisfaction. Use operations, training sessions, and morning PT as independent variables.
 
