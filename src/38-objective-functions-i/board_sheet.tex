@@ -11,34 +11,38 @@
 
 \subheader{Warm-Up: Formulating Constraints}
 
-\noindent Record the general form of a linear programming model. Which part represents the objective function? Which part represents the constraints?
+\begin{enumerate}
+
+\item Record the general formulation for a linear programming model. Which part represents the objective function? Which part represents the constraints?
 
 \vfill
 
-\noindent Record the general form of a linear programming model \textit{using matrix vector notation}.
+\item Record the general formulation for a linear programming model \textit{using matrix vector notation}.
 
 \vfill
 
-\noindent You branched Cyber. Congratulations! 
+\item You branched Cyber. Congratulations! 
 
 Three years later, you are the mission element lead for a National Mission Team. 
 Your team of operators and analysts must both 1) train to conduct Offensive Cyberspace Operations and 2) execute those operations as a part of the Cyber Mission Force.
 
-You have 2 fully qualified operators, each of whom is restricted by policy to a maximum of 50 work hours per week. 
-You also have 3 qualified analysts, each of whom can work a maximum of 60 hours per week.
+You have 2 fully qualified operators and 3 fully qualified analysts.
+Each operator or analyst can work a maximum of 60 hours per week.
 
-Each hour of operations you schedule requires 2 operator-hours and 3 analyst-hours to complete. 
-Each hour of training you schedule requires 2 operator-hours and 1 analyst-hour to complete. 
+Each hour of operations you schedule requires 3 operator-hours and 2 analyst-hours to complete. 
+Each hour of training you schedule requires 1 operator-hour and 3 analyst-hours to complete. 
 Your higher headquarters requires you to conduct at least 20 hours of operations each week.
 
-Let $x$ be the number of hours of operations you schedule each week and $y$ be the number of hours of training you schedule each week.
+Let $x_1$ be the number of hours of operations you schedule each week and $x_2$ be the number of hours of training you schedule each week.
 Formulate the constraints using function notation. 
 
 \vfill
 
-\noindent Formulate the constraints using matrix vector notation.
+\item Formulate the constraints using matrix vector notation.
 
 \vfill
+
+\end{enumerate}
 
 \newpage
 
@@ -88,21 +92,19 @@ Formulate an objective function minimizing the amount of workstation time used b
 
 \subsubheader{$>$2 Independent Variables}
 
-\leavevmode\hspace*{\parindent}You realize that you have forgotten to account for time dedicated to unit PT. You must conduct a minimum of 5 hours of unit PT each week. PT hours do not count towards the maximum number of hours an individual Soldier can work. Therefore, your new constraints are: 
-\begin{align*}
-3x + 2y &\le 180 \\
-2x + y &\le 100 \\
-x &\ge 20 \\
-z &\ge 5 \\
-x, y, z &\ge 0
-\end{align*}
-
-Morning PT is bad for your complaining index, with an unprecedented 87 minutes of complaining for every hour of PT you schedule. 
-
-Formulate an objective function minimizing the amount of complaining on your team, now including PT hours as a third independent variable.
+\leavevmode\hspace*{\parindent}You want to spend as close to 2/3 of the unit's time on operations as possible without going over.
+Formulate an objective function for this goal. Hint: you may need to add an additional constraint.
 
 \vfill
 
+You realize that you have forgotten to account for time dedicated to unit PT. You must conduct a minimum of 5 hours of unit PT each week. PT hours do not count towards the maximum number of hours an individual Soldier can work. Therefore, your new constraints are: 
+\begin{align*}
+2x_1 + 3x_2 &\le 180 \\
+3x_1 + x_2 &\le 120 \\
+x_1 &\ge 20 \\
+x_2 &\ge 0 \\
+x_3 &\ge 5
+\end{align*}
 Does this affect your ability to graphically depict the objective function?
 Does it affect your ability to find an optimal solution to the linear programming model?
 
@@ -125,6 +127,6 @@ Do operations, training sessions, and morning PT contribute positively or negati
 
 \subheader{Wrap-Up: Food for Thought}
 
-\noindent In the objective functions that we used today, the parameter ($c_i$) values were given to you. In the real world, will that always be true? How might you use predictive modeling to calculate parameters for your objective function?
+\noindent In the objective functions that we used today, the cost coefficient values were given to you. In the real world, will that always be true? How might you use predictive modeling to calculate parameters for your objective function?
 
 \end{document}
