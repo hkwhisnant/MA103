@@ -1,0 +1,76 @@
+name: Deploy slide decks to GitHub Pages
+
+# Publishes every lesson under src/ that has its own reveal.js deck
+# (i.e. contains a presentation/index.html). New lessons need no workflow
+# changes — just add src/<lesson>/presentation/index.html (+ slides/,
+# assets/) and push.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**/presentation/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble lesson decks
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          links=""
+
+          for dir in src/*/; do
+            lesson="$(basename "$dir")"
+            pres="$dir/presentation"
+            if [ -f "$pres/index.html" ]; then
+              echo "Publishing $lesson"
+              mkdir -p "_site/$lesson"
+              cp "$pres/index.html" "_site/$lesson/"
+              [ -d "$pres/slides" ] && cp -r "$pres/slides" "_site/$lesson/"
+              [ -d "$pres/assets" ] && cp -r "$pres/assets" "_site/$lesson/"
+              links="$links<li><a href=\"$lesson/\">$lesson</a></li>"
+            fi
+          done
+
+          cat > _site/index.html <<HTML
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <title>MA103 Slide Decks</title>
+          </head>
+          <body>
+            <h1>MA103 Slide Decks</h1>
+            <ul>${links}</ul>
+          </body>
+          </html>
+          HTML
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

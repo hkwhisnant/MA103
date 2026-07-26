@@ -24,12 +24,12 @@ all: $(PDFS)
 define LESSON_RULE
 $(BUILD_DIR)/$(1)/$(1).pdf: $(2)
 	@mkdir -p $(BUILD_DIR)/$(1)
-	cd $(SRC_DIR)/$(1) && $(LATEX) -output-directory=$(CURDIR)/$(BUILD_DIR)/$(1) $(notdir $(2))
+	cd $(SRC_DIR)/$(1)/board_sheet && $(LATEX) -output-directory=$(CURDIR)/$(BUILD_DIR)/$(1) $(notdir $(2))
 	mv $(BUILD_DIR)/$(1)/$(basename $(notdir $(2))).pdf $(BUILD_DIR)/$(1)/$(1).pdf
 	@find $(BUILD_DIR)/$(1) -maxdepth 1 -type f ! -name '$(1).pdf' -delete
 endef
 
-$(foreach l,$(LESSONS),$(if $(wildcard $(SRC_DIR)/$(l)/*.tex),$(eval $(call LESSON_RULE,$(l),$(firstword $(wildcard $(SRC_DIR)/$(l)/*.tex)))),))
+$(foreach l,$(LESSONS),$(if $(wildcard $(SRC_DIR)/$(l)/board_sheet/*.tex),$(eval $(call LESSON_RULE,$(l),$(firstword $(wildcard $(SRC_DIR)/$(l)/board_sheet/*.tex)))),))
 
 clean:
 	rm -rf $(BUILD_DIR)
