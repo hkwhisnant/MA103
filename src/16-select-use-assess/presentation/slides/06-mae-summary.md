@@ -1,5 +1,3 @@
-## Model Comparison — Mean Absolute Error
-
 | Model | Training MAE | Test MAE | Extension MAE |
 |---|---|---|---|
 | Polynomial (degree 8) | 0.700707921 | 2.452675158 | 632585.2136 |

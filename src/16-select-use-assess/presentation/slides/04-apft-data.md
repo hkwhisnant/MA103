@@ -1,5 +1,3 @@
-## Miles Run vs. APFT Score — Raw Data
-
 <div class="table-wrap">
 
 | Miles Run/Month | APFT Score (2MR) |
