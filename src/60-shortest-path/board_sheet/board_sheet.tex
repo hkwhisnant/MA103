@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 \input{../../../templates/whisnant_board_sheet}
+\usepackage{enumitem}
 
 \begin{document}
 \lessonheader{60}{Shortest Path}
@@ -10,5 +11,159 @@
   {Formulate a shortest path problem as a linear program.},
   {Solve and interpret a shortest path model using Excel Solver.}%
 }
+
+\subheader{Problem 1: Odysseus' Shortest Path}
+
+\noindent After the fall of Troy, Odysseus must find the shortest route home to Ithaca.
+From Troy (node 1), he can sail toward the land of the Lastrygonians (node 2), a journey of two years, or toward Circe's island (node 3), a journey of four years. 
+Treacherous currents connect the Lastrygonians and Circe's islands to one another. 
+It takes one year to get from the Lastrygonians to Circe's island, and two years to get from Circe's island to the Lastrygonians.
+From the Lastrygonians, continuing on to Ithaca (node 4) takes another ten years, while from Circe's island, the journey on to Ithaca takes eight years.
+
+\begin{enumerate}[label=(\alph*)]
+\item Draw a node-arc diagram representing this network.
+
+\vfill
+
+\item Fill in the table below with the cost coefficient $c_{ij}$ for each arc $(i,j)$ in the network, then use those coefficients to formulate the objective function for this shortest path problem.
+
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+$i$ & $j$ & $c_{ij}$ \\
+\hline
+1 & 1 & \\
+\hline
+1 & 2 & \\
+\hline
+1 & 3 & \\
+\hline
+1 & 4 & \\
+\hline
+2 & 1 & \\
+\hline
+2 & 2 & \\
+\hline
+2 & 3 & \\
+\hline
+2 & 4 & \\
+\hline
+\end{tabular}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+$i$ & $j$ & $c_{ij}$ \\
+\hline
+3 & 1 & \\
+\hline
+3 & 2 & \\
+\hline
+3 & 3 & \\
+\hline
+3 & 4 & \\
+\hline
+4 & 1 & \\
+\hline
+4 & 2 & \\
+\hline
+4 & 3 & \\
+\hline
+4 & 4 & \\
+\hline
+\end{tabular}
+\end{minipage}
+\end{center}
+
+\vspace{0.2in}
+\noindent Minimize $Z = $
+
+\newpage
+
+\item Use the diagram and/or the table above to formulate the flow constraint through each of the four nodes. Write each constraint below.
+
+\noindent Node 1:
+\vfill
+
+\noindent Node 2:
+\vfill
+
+\noindent Node 3:
+\vfill
+
+\noindent Node 4:
+\vfill
+
+\item Justify your choice of the right-hand side value for each of the four constraints above. Additionally, discuss whether there are any other constraints this problem may require.
+\vfill
+\vfill
+\vfill
+
+\end{enumerate}
+
+\hrule
+\subheader{Problem 2: A More Treacherous Voyage}
+
+\noindent Odysseus' navigator warns him that the route home is not so simple: beyond the Lastrygonians and Circe's island, many more obstacles lie between Troy and Ithaca, including the Lotus-Eaters, Polyphemus' island, Scylla and Charybdis, Apollo's island, and Calypso's island. The travel time (in years) along each possible arc of this expanded network is given below, where
+
+\begin{center}
+$1 = $ Troy, \quad $2 = $ Lastrygonians, \quad $3 = $ Circe's Island, \quad $4 = $ Lotus-Eaters,\\
+$5 = $ Polyphemus' Island, \quad $6 = $ Scylla and Charybdis, \quad $7 = $ Apollo's Island,\\
+$8 = $ Calypso's Island, \quad $9 = $ Ithaca.
+\end{center}
+
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+$i$ & $j$ & $c_{ij}$ (years) \\
+\hline
+1 & 2 & 2 \\
+\hline
+1 & 3 & 4 \\
+\hline
+1 & 4 & 1 \\
+\hline
+2 & 3 & 1 \\
+\hline
+3 & 2 & 2 \\
+\hline
+2 & 9 & 10 \\
+\hline
+3 & 9 & 8 \\
+\hline
+\end{tabular}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+$i$ & $j$ & $c_{ij}$ (years) \\
+\hline
+3 & 6 & 3 \\
+\hline
+4 & 5 & 1 \\
+\hline
+5 & 6 & 2 \\
+\hline
+6 & 7 & 1 \\
+\hline
+7 & 8 & 2 \\
+\hline
+7 & 9 & 4 \\
+\hline
+8 & 9 & 2 \\
+\hline
+\end{tabular}
+\end{minipage}
+\end{center}
+
+\noindent Follow the steps from Problem 1 to formulate a linear programming model for the new, more complicated voyage. How many years will it take Odysseus to get home, and where will he stop along the way?
 
 \end{document}
